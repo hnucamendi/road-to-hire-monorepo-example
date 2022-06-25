@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>NucaPrints | Shop</title>
+  </head>
+  <body>
+    <!-- ************* -->
+    <!-- UNIVERSAL NAV -->
+    <!-- ************* -->
+
+    <button class="mobile-nav-toggle">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="mobile-nav_logo"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
+      </svg>
+    </button>
+    <nav class="nav-section_main nav-section_main-mobile">
+      <div class="nav-section_logo">
+        <a href="index.html">NucaPrints</a>
+      </div>
+      <div class="nav-section_spacer" data-visible="false">
+        <a href="index.html">Home</a>
+        <a href="product.html">Shop</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+
+    <header class="hero-section_contact hero">
+      <h1>NucaPrints | Contact</h1>
+    </header>
+
+    <form class="contact-form">
+      <div class="form-item form-item--01">
+        <label>First Name</label>
+        <input
+          placeholder="Joe? Maria?... "
+          type="text"
+          required="required"
+          name="name"
+        />
+      </div>
+      <div class="form-item form-item--02">
+        <label>Last Name</label>
+        <input
+          placeholder="Smith? Johnson?..."
+          type="text"
+          required="required"
+          name="name"
+        />
+      </div>
+      <div class="form-item form-item--03">
+        <label>Email</label>
+        <input
+          placeholder="Email@email.com"
+          type="email"
+          required="required"
+          name="email"
+        />
+      </div>
+      <div class="form-item form-item--04">
+        <label>Phone Number</label>
+        <input
+          placeholder="Ill send a goodnight txt"
+          type="text"
+          pattern="[0-9]{10}"
+          required="required"
+          name="phoneNumber"
+        />
+      </div>
+      <div class="form-item form-item--05">
+        <label>Comments</label>
+        <textarea
+          rows="5"
+          cols="20"
+          placeholder="Hi leave comment"
+          name="comment"
+        ></textarea>
+      </div>
+      <button class="form-btn form-item_06" type="submit" name="submit">
+        Send
+      </button>
+    </form>
+
+    <!-- **************** -->
+    <!-- UNIVERSAL FOOTER -->
+    <!-- **************** -->
+    <footer class="main-footer_container">
+      <div class="main-footer_item">
+        <a href="index.html">Home</a>
+        <a href="product.html">Shop</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="main-footer_social">
+        <a target="_blank" href="https://github.com/ArriolaHarold2001"
+          ><img src="img/logo/icons8-github.svg" alt="github logo"
+        /></a>
+      </div>
+      <div class="main-footer_item">
+        <img
+          src="img/logo/nucaprints-logo_white.webp"
+          alt="NucaPrints logo"
+          class="footer-img"
+        />
+        <p>&copy; 2021 NucaPrints</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
