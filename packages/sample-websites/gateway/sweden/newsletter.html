@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <title>TravelCorp | Newsletter</title>
+  </head>
+
+  <body class="parallax form">
+    <!-- *********** -->
+    <!-- NAV SECTION -->
+    <!-- *********** -->
+
+    <header class="gen-header_main">
+      <h1 class="gen-nav_head">Travel Corp - Newsletter</h1>
+      <nav class="gen-nav">
+        <a class="gen-nav_item" href="index.html">Home</a>
+        <a class="gen-nav_item" href="todo.html">Sights to See</a>
+        <a class="gen-nav_item" href="newsletter.html">Newsletter</a>
+      </nav>
+    </header>
+
+    <!-- ******************* -->
+    <!-- UNIVERSAL CONTAINER -->
+    <!-- ******************* -->
+
+    <section class="container">
+      <h2>Sign up to our Newsletter!</h2>
+      <p class="news-head-p">
+        By siging up to our newsletter you will never miss the greatest and best
+        news about your favorite countries! We promise not to spam your email
+        and we will only sendfun information guaranteed
+      </p>
+
+      <!-- ************ -->
+      <!-- FORM SECTION -->
+      <!-- ************ -->
+
+      <form class="user-form">
+        <div class="form-item form-item_01">
+          <label>First Name</label>
+          <input
+            type="text"
+            placeholder="First Name"
+            required="required"
+            name="name"
+          />
+        </div>
+
+        <div class="form-item form-item_02">
+          <label class="lname">Last Name</label>
+          <input
+            class="lname-in"
+            type="text"
+            placeholder="Last Name"
+            required="required"
+            name="name"
+          />
+        </div>
+
+        <div class="form-item form-item_03">
+          <label class="email">Email Address</label>
+          <input
+            class="email-name"
+            type="email"
+            placeholder="Email Address"
+            required="required"
+            name="email"
+          />
+        </div>
+
+        <div class="form-item form-item_04">
+          <label class="phone">Phone Number</label>
+          <input
+            class="phone-number"
+            type="text"
+            placeholder="XXX-XXX-XXXX"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            required="required"
+            name="phoneNumber"
+          />
+        </div>
+
+        <textarea
+          rows="5"
+          cols="50"
+          class="form-item form-item_05"
+          placeholder="Add any extra comments here.."
+          name="comment"
+        ></textarea>
+
+        <div class="form-item form-item_06">
+          <label class="confirm-age">
+            Are you 13 years of age or older?
+            <input class="confirm-age_button" type="checkbox" name="check" />
+          </label>
+        </div>
+
+        <div class="form-item form-item_07">
+          <label class="accept-terms">
+            by clicking this you agree to the terms and conditions and that you
+            are older than 13 years of age
+            <input
+              class="accept-terms_button"
+              type="radio"
+              required="required"
+              name="check"
+            />
+          </label>
+        </div>
+        <button
+          class="form-button form-item form-item_08"
+          type="submit"
+          name="submit"
+        >
+          Submit
+        </button>
+      </form>
+    </section>
+
+    <!-- **************** -->
+    <!-- UNIVERSAL FOOTER -->
+    <!-- **************** -->
+
+    <div class="footer-container">
+      <footer class="main-footer">
+        <a
+          href="https://github.com/hnucamendi"
+          target="_blank"
+          rel="noopener"
+          aria-label="github"
+        >
+          <img
+            src="./img/logo-GitHub.png"
+            alt="github logo"
+            class="github-logo"
+          />
+        </a>
+        <p class="copyright-text">Copyright &copy; 2021 by TravelCorp.</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="fake-logo"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path d="M13 7H7v6h6V7z" />
+          <path
+            fill-rule="evenodd"
+            d="M7 2a1 1 0 012 0v1h2V2a1 1 0 112 0v1h2a2 2 0 012 2v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v2a2 2 0 01-2 2h-2v1a1 1 0 11-2 0v-1H9v1a1 1 0 11-2 0v-1H5a2 2 0 01-2-2v-2H2a1 1 0 110-2h1V9H2a1 1 0 010-2h1V5a2 2 0 012-2h2V2zM5 5h10v10H5V5z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </footer>
+    </div>
+  </body>
+</html>

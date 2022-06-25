@@ -1,0 +1,658 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #fff;
+  text-shadow: -1px -1px 1px #000, 1px -1px 1px #000, -1px 1px 1px #000,
+    1px 1px 1px #000;
+  font-family: 'Josefin Sans', sans-serif;
+  /* border: 5px solid #ebcc34; */
+  border-top: 10px solid #ebcc34;
+}
+
+.parallax {
+  background-image: url('./img/flag-sweden.png');
+
+  min-height: 500px;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  width: 1200px;
+  margin: auto;
+  background-color: rgba(68, 68, 68, 0.8);
+  border: solid 2px #ebcc34;
+  padding: 0.8%;
+}
+
+.aside-container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  column-gap: 40px;
+  align-items: center;
+}
+
+.gen-header_main {
+  background-color: #004b87;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 60px;
+  margin-bottom: 60px;
+}
+
+nav a:link {
+  padding-right: 15px;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav a:link:last-child {
+  padding: 0;
+}
+
+a:visited {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #ebcc34;
+  font-weight: bold;
+  text-decoration: underline overline #ebcc34;
+  /*   #ebcc34 */
+}
+
+a:active {
+  color: #004b87;
+}
+
+a:link {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: -1px -1px 6px #000, 1px -1px 6px #000, -1px 1px 6px #000,
+    1px 1px 6px #000;
+}
+
+h1 {
+  font-size: 40px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 20px;
+}
+h4 {
+  font-size: 15px;
+}
+
+p {
+  font-size: 21px;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ==========================================================================
+    INDEX - PAGE
+   ========================================================================== */
+
+.hero {
+  height: 100vh;
+  background-image: linear-gradient(
+      rgba(187, 180, 76, 0.3),
+      rgba(45, 57, 189, 0.25)
+    ),
+    url('img/hero-main.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.hero-header_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 60px 60px;
+}
+
+.hero-footer_bottom {
+  display: flex;
+  justify-content: space-between;
+  margin: 60px 60px;
+}
+
+.hero-header_middle {
+  display: flex;
+  justify-content: center;
+  text-shadow: -1px -1px 6px #000, 1px -1px 6px #000, -1px 1px 6px #000,
+    1px 1px 6px #000;
+}
+
+.logo {
+  font-size: 5vh;
+  text-transform: uppercase;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.hero-title {
+  font-size: 9vh;
+  color: white;
+}
+
+.home-nav a:link {
+  font-size: 3vh;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.button {
+  font-size: 3vh;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #444;
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.hero-footer_bottom .button {
+  background-color: #ebcc34;
+  color: #004b87;
+}
+
+.hero-footer_bottom .button:hover {
+  background-color: #004b87;
+  color: #ebcc34;
+}
+
+.hero-footer_bottom .button:active {
+  background-image: url('img/flag-sweden.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #000;
+}
+
+/* ==========================================================================
+    SLIDER
+   ========================================================================== */
+
+.slideshow-container {
+  display: flex;
+  justify-content: center;
+  margin: 15vh 10vh;
+  padding: 15vh 25vh;
+  background-image: linear-gradient(
+      rgba(168, 129, 45, 0.4),
+      rgba(78, 62, 136, 0.35)
+    ),
+    url('./img/slideshow-backdrop.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: solid 5px #ebcc34;
+  filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
+  filter: sepia(35%);
+}
+
+.slideshow {
+  overflow: hidden;
+  width: 728px;
+  height: 510px;
+}
+
+.slide-wrapper {
+  width: 2912px;
+  animation-name: slide;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+.slide {
+  float: left;
+  width: 728px;
+  height: 510px;
+  background-position: center;
+  background-size: cover;
+  filter: drop-shadow(0 0 0.95rem rgb(0, 0, 0));
+  filter: brightness(1);
+}
+
+.slide:nth-child(1) {
+  background-image: url('./img/slideshow-city-homes.jpg');
+}
+.slide:nth-child(2) {
+  background-image: url('./img/slideshow-bay-city.jpg');
+}
+.slide:nth-child(3) {
+  background-image: url('./img/slideshow-stockholm.jpg');
+}
+.slide:nth-child(4) {
+  background-image: url('./img/slideshow-canal.jpg');
+}
+
+/*  SLIDER ANIMATION
+   ========================================================================== */
+
+@keyframes slide {
+  20% {
+    margin-left: 0px;
+  }
+  30% {
+    margin-left: -728px;
+  }
+  50% {
+    margin-left: -728px;
+  }
+  60% {
+    margin-left: -1456px;
+  }
+  70% {
+    margin-left: -1456px;
+  }
+  80% {
+    margin-left: -2184px;
+  }
+  90% {
+    margin-left: -2184px;
+  }
+}
+
+/* ==========================================================================
+    MAIN - COUNTRY INFORMATION
+   ========================================================================== */
+
+.location-flex {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  flex: 1;
+}
+
+.location-desc {
+  margin-bottom: 30px;
+  padding: 6px 0;
+  border-bottom: dashed #ebcc34 1px;
+}
+
+.country-location {
+  margin-bottom: 60px;
+}
+
+.flag-desc {
+  margin-bottom: 30px;
+  padding: 6px 0;
+  border-bottom: dashed #ebcc34 1px;
+}
+
+.flag-flex {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  /* background-color: #f7f7f7f7; */
+}
+
+.country-flag {
+  /* border: solid 5px #ebcc34; */
+  margin-bottom: 60px;
+}
+
+.map-img {
+  width: 400px;
+  height: 250px;
+  filter: drop-shadow(0 0 0.35rem rgb(0, 0, 0));
+}
+
+/* ==========================================================================
+    ASIDE SECTION
+   ========================================================================== */
+
+.related-container {
+  border: 4mm ridge rgb(235, 204, 52);
+  padding: 30px 20px;
+}
+
+.related-img {
+  width: 70px;
+  height: 40px;
+  /* height: 46.67px; */
+  filter: drop-shadow(0 0 0.35rem rgb(0, 0, 0));
+}
+
+.related-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.related-container p {
+  font-size: 15px;
+}
+
+.related-container a:link,
+.related-container a:visited {
+  text-align: center;
+  display: inline-block;
+
+  color: #fff;
+  text-shadow: -1px -1px 4px #000, 1px -1px 4px #000, -1px 1px 4px #000,
+    1px 1px 4px #000;
+}
+
+.related-container a:hover,
+.related-container a:active {
+  color: #ff0000;
+}
+
+/* ==========================================================================
+    SECONDARY NAV
+   ========================================================================== */
+
+.gen-nav a {
+  color: #fff;
+  font-size: 20px;
+}
+
+.gen-nav a:visited {
+  color: #fff;
+}
+
+.gen-nav a:hover {
+  color: #ebcc34;
+}
+
+.gen-nav a:active {
+  color: #000;
+}
+
+.gen-nav-head {
+  font-size: 30px;
+  margin-bottom: 0;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+article {
+  display: block;
+  flex: 1;
+}
+
+aside {
+  flex: 0 1 300px;
+}
+
+/* ==========================================================================
+    TODO - GRID CONTAINER
+   ========================================================================== */
+
+.grid-container {
+  margin: 200px 100px;
+  margin-top: 60px;
+}
+
+.grid-container_1 {
+  display: grid;
+  text-align: center;
+  column-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 600px;
+}
+
+.box {
+  color: #000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: solid 2px #ebcc34;
+
+  text-align: center;
+  padding: 25px 20px;
+  font-size: 30px;
+  width: 100%;
+  height: 100%;
+
+  filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
+}
+
+.box p {
+  color: #ebcc34;
+  font-size: 1.5vh;
+  filter: drop-shadow(0 0 0.35rem rgb(0, 0, 0));
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.box a:link,
+.box a:visited {
+  color: #fff;
+  filter: drop-shadow(0 0 0.35rem rgb(0, 0, 0));
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.box a:active {
+  color: #fff;
+  filter: drop-shadow(0 0 0.35rem rgb(0, 0, 0));
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.box a:hover {
+  color: #ebcc34;
+  filter: drop-shadow(0 0 0.35rem rgb(0, 0, 0));
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.box--1 {
+  background-image: url('./img/honorable-1.jpg');
+}
+.box--2 {
+  background-image: url('./img/honorable-2.jpg');
+}
+.box--3 {
+  background-image: url('./img/honorable-3.jpg');
+}
+.box--4 {
+  background-image: url('./img/honorable-4.jpg');
+}
+.box--5 {
+  background-image: url('./img/honorable-5.jpg');
+}
+
+/* ==========================================================================
+    TODO - PAGE
+   ========================================================================== */
+
+.todo-main-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.locations {
+  display: flex;
+  flex-direction: column;
+  gap: 75px;
+  margin-bottom: 60px;
+}
+
+.location-info {
+  font-size: 21px;
+}
+
+.item--01,
+.item--02,
+.item--03 {
+  padding: 6px 0;
+}
+
+.item--03 {
+  display: inline-block;
+  margin-top: 9px;
+  border-top: dashed #ebcc34 1px;
+  text-transform: uppercase;
+}
+
+.info-link_item:link,
+.info-link_item:visited {
+  color: rgb(88, 113, 255);
+}
+.info-link_item:active,
+.info-link_item:hover {
+  color: #ebcc34;
+}
+
+.todo-location-img {
+  width: 500px;
+  border: solid 3px #ebcc34;
+  filter: drop-shadow(0 0 0.35rem rgb(0, 0, 0));
+}
+
+.todo-location-p {
+  margin-bottom: 20px;
+  padding: 6px 0;
+  border-bottom: dashed 1px #ebcc34;
+}
+
+.indv--01,
+.indv--02,
+.indv--03 {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.location--01 h3,
+.location--02 h3,
+.location--03 h3 {
+  border-bottom: dashed #ebcc34 1px;
+  padding: 6px;
+  display: inline-block;
+}
+
+/* ==========================================================================
+    NEWSLETTER - PAGE
+   ========================================================================== */
+
+.news-head-p,
+.form-item {
+  text-align: center;
+  margin-bottom: 10px;
+  text-transform: none;
+}
+
+.user-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 120px;
+}
+
+.form-item_01 {
+  margin-top: 40px;
+}
+
+.form-item_07 {
+  margin-bottom: 40px;
+}
+
+.form-button {
+  font-weight: bold;
+  letter-spacing: 3px;
+  background-color: #000;
+  border: solid 4px #ebcc34;
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 25px;
+  width: 50%;
+}
+
+.form-button:hover {
+  color: #000;
+  background-color: #fff;
+  border: 4px solid #ebcc34;
+}
+
+input,
+textarea {
+  padding: 5px;
+  border: solid 3px #ebcc34;
+}
+
+/* ==========================================================================
+    FOOTER
+   ========================================================================== */
+
+.footer-container {
+  margin-top: 200px;
+  border-top: 1.5mm ridge rgba(235, 204, 52, 0.95);
+  background-color: rgba(68, 68, 68, 0.8);
+}
+
+.main-footer {
+  display: grid;
+  grid-template-columns: 50px 230px 1fr;
+  align-items: center;
+  justify-items: end;
+
+  width: auto;
+  height: 140px;
+  margin: 0 100px;
+}
+
+.main-footer p {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.main-footer img {
+  margin-bottom: 5px;
+}
+
+.fake-logo {
+  width: 73.8px;
+  height: 80.6px;
+  /* width: 369px;
+  height: 403px; */
+}
+
+.github-logo {
+  width: 65px;
+  height: 65px;
+}

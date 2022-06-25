@@ -29,3 +29,7 @@ Choose a location that you would like the travel to the location that you are fr
 - Footer 1/2 page
 
 each page must contain accurate information about the place, or at least as realistic as possible and should demonstrate that the apprentice spent time utilizing the topics learned during the gateway
+
+## Author
+
+Website by Harold Arriola Nucamendi
