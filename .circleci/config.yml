@@ -23,6 +23,9 @@ orbs:
                 -run:
                   name: 'Install dependencies'
                   command: |
+                  # Replace "accept-new" with something compatible with older versions of SSH
+                  set ssh_strict_host_key_checking: true
+                  # npm set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN
                   npm install
                   npx lerna init
                   npx lerna exec -- npm install --production
