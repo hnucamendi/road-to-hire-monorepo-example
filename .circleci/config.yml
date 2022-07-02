@@ -26,6 +26,8 @@ orbs:
                   # Replace "accept-new" with something compatible with older versions of SSH
                   set ssh_strict_host_key_checking: true
                   # npm set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN
+                  echo "registry=https://github.com/hnucamendi/road-to-hire-monorepo-example" >> ~/.npmrc
+                  [ ! -z "${ARTIFACTORY_USER}" ] && curl -s -u ${ARTIFACTORY_USER}:${ARTIFACTORY_TOKEN} https://github.com/hnucamendi/road-to-hire-monorepo-example >> ~/.npmrc
                   npm install
                   npx lerna init
                   npx lerna exec -- npm install --production
