@@ -1,44 +1,33 @@
 version: 2.1
+executors:
+  node-executor: #Defines the executor docker image here
+    docker:
+      -image: cimg/node:16.15
 
-orbs:
-  aws-cli: cimg/aws-cli@2.0.3
-
-  executors:
-    node-executor:
-      docker:
-        -image: cimg/node:16.15
-
-        jobs:
-          build:
-            executor: node-executor
-            steps:
-              - checkout
-              - restore_cache:
-                keys:
-                  - v1-npm-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
-                  - v1-npm-cache-{{ .Branch }}-
-                  - v1-npm-cache-
-                -setup_remote_docker:
-                  docker_layer_caching: true
-                -run:
-                  name: 'Install dependencies'
-                  command: |
-                  # Replace "accept-new" with something compatible with older versions of SSH
-                  set ssh_strict_host_key_checking: true
-                  # npm set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN
-                  echo "registry=https://r2hmonorepoexample.jfrog.io/artifactory/api/npm/default-npm-virtual/" >> ~/.npmrc
-                  [ ! -z "${ARTIFACTORY_USER}" ] && curl -s -u ${ARTIFACTORY_USER}:${ARTIFACTORY_TOKEN} https://r2hmonorepoexample.jfrog.io/artifactory/api/npm/default-npm-virtual/ >> ~/.npmrc
-                  npm install
-                  npx lerna init
-                  npx lerna exec -- npm install --production
-                -run:
-                  name: 'Run Semantic release to build and generate .version file'
-                  command: npx lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo
-                -save_cache:
-                  key: v1-npm-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
-                  paths:
-                    - /root/.npm
-                  - persist_to_workspace:
-                      root: .
-                      paths: 
-                      - packages
+      jobs:
+        build:
+          executor: node-executor #use custom executor defines above
+          steps:
+            - checkout
+        - run:
+            name: 'Run Semantic release to build and generate .version file'
+            command: |
+              npm set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN
+              npx lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo
+              npm install
+              npx lerna init
+              npx lerna exec -- npm install --production
+          - run:
+              name: 'Run Semantic release'
+              command: |
+              npx lerna exec --concurrency 1 --npx --no-install semantic-release-monorepo
+workflows:
+  build-test:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - master
+                requires:
+                  - build

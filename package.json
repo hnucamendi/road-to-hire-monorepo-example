@@ -2,7 +2,9 @@
   "name": "root",
   "private": true,
   "devDependencies": {
-    "lerna": "^5.1.6"
+    "lerna": "^5.1.6",
+    "semantic-release": "^19.0.3",
+    "semantic-release-monorepo": "^7.0.5"
   },
   "dependencies": {
     "nucaprints-react": "file:packages/sample-websites/ecommerce/react/nucaprints"
