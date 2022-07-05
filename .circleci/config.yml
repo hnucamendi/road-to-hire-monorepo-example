@@ -19,8 +19,8 @@ executors:
               npx lerna exec -- npm install --production
           -run:
               name: 'Run Semantic release'
-              command: 
-              npx lerna exec --concurrency 1 --npx --no-install semantic-release-monorepo
+              command: |
+                npx lerna exec --concurrency 1 --npx --no-install semantic-release-monorepo
 
 workflows:
   build-test:
