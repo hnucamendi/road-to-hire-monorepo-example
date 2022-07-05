@@ -21,10 +21,12 @@ executors:
               name: 'Run Semantic release'
               command: |
               npx lerna exec --concurrency 1 --npx --no-install semantic-release-monorepo
+              
 workflows:
   build-test:
     jobs:
       - build:
+
           filters:
             branches:
               only:
