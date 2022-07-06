@@ -9,25 +9,26 @@ executors:
         executor: node-executor #use custom executor defines above
         steps:
           - checkout
-          - run:
-            name: 'Run Semantic release to build and generate .version file'
-            command: |
-              npm set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN
-              npx lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo
-              npm install
-              npx lerna init
-              npx lerna exec -- npm install --production
-          - run:
-            name: 'Run Semantic release'
-            command: |
-              npx lerna exec --concurrency 1 --npx --no-install semantic-release-monorepo
+          - run: node --version
+#           - run:
+#             name: 'Run Semantic release to build and generate .version file'
+#             command: |
+#               npm set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN
+#               npx lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo
+#               npm install
+#               npx lerna init
+#               npx lerna exec -- npm install --production
+#           - run:
+#             name: 'Run Semantic release'
+#             command: |
+#               npx lerna exec --concurrency 1 --npx --no-install semantic-release-monorepo
 
-workflows:
-  build-test:
-    jobs:
-      - build:
-          context: road-to-hire-monorepo-example
-          filters:
-            branches:
-              only:
-                - master
+# workflows:
+#   build-test:
+#     jobs:
+#       - build:
+#           context: road-to-hire-monorepo-example
+#           filters:
+#             branches:
+#               only:
+#                 - master
