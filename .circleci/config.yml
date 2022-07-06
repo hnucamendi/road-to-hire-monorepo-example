@@ -4,12 +4,12 @@ executors:
     docker:
       - image: cimg/node:16.15
 
-    jobs:
-      build:
-        executor: node-executor #use custom executor defines above
-        steps:
-          - checkout
-          - run: node --version
+jobs:
+  build:
+    executor: node-executor #use custom executor defines above
+    steps:
+      - checkout
+      - run: node --version
 #           - run:
 #             name: 'Run Semantic release to build and generate .version file'
 #             command: |
