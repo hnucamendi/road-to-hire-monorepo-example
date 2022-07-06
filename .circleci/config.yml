@@ -22,12 +22,12 @@ jobs:
         command: |
           npx lerna exec --concurrency 1 --npx --no-install semantic-release-monorepo
 
-# workflows:
-#   build-test:
-#     jobs:
-#       - build:
-#           context: road-to-hire-monorepo-example
-#           filters:
-#             branches:
-#               only:
-#                 - master
+workflows:
+  build-test:
+    jobs:
+      - build:
+          context: road-to-hire-monorepo-example
+          filters:
+            branches:
+              only:
+                - master
