@@ -25,9 +25,4 @@ jobs:
 workflows:
   build-test:
     jobs:
-      - build:
-        context: 'road-to-hire-monorepo-example'
-        filters:
-        branches:
-        only:
-          - master
+      - build
