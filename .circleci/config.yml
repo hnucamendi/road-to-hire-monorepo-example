@@ -12,14 +12,8 @@ jobs:
       - run:
           name: 'Run Semantic release to build and generate .version file'
           command: |
-            npx lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo
             npm install
             npx lerna init
-      - run:
-          name: 'Run Semantic release'
-          command: |
-            npx lerna exec --concurrency 1 --npx --no-install semantic-release-monorepo
-
 workflows:
   build-test:
     jobs:
