@@ -12,7 +12,6 @@ jobs:
       - run:
           name: 'Run Semantic release to build and generate .version file'
           command: |
-            npm set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN
             npx lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo
             npm install
             npx lerna init
