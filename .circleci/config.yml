@@ -1,8 +1,8 @@
 version: 2.1
 executors:
   node-executor: #Defines the executor docker image here
-    docker:
-      - image: cimg/node:16.15
+  docker:
+    - image: cimg/node:16.15
 
 jobs:
   build:
@@ -17,12 +17,8 @@ jobs:
             npm install
             npx lerna init
             npx lerna exec -- npm install --production
-      - run:
-          name: 'Run Semantic release'
-          command: |
-            npx lerna exec --concurrency 1 --npx --no-install semantic-release-monorepo
 
 workflows:
   build-test:
-    jobs:
-      - build
+  jobs:
+    - build
